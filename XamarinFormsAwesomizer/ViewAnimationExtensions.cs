@@ -4,7 +4,7 @@ using System.Diagnostics;
 
 namespace XamarinFormsAwesomizer
 {
-    public static class AnimationExtensions
+    public static class ViewAnimationExtensions
     {
 
         private static Rectangle FromOffSet (this Rectangle rectangle, double xOffset = 0, double yOffSet = 0)
@@ -13,16 +13,17 @@ namespace XamarinFormsAwesomizer
             return rect;
         }
 
-        public async static void ShakeHorizontally(this View view, float strength = 12.0f, uint delay = 50)
+        public static void ShakeHorizontally(this View view, float strength = 12.0f, uint duration = 500)
         {
-            await view.LayoutTo(view.Bounds.FromOffSet(-strength), delay, Easing.Linear);
-            await view.LayoutTo(view.Bounds.FromOffSet(+strength), delay, Easing.Linear);
-            await view.LayoutTo(view.Bounds.FromOffSet(-strength* .66f), delay, Easing.Linear);
-            await view.LayoutTo(view.Bounds.FromOffSet(+strength* .66F), delay, Easing.Linear);
-            await view.LayoutTo(view.Bounds.FromOffSet(-strength * .33f), delay, Easing.Linear);
-            await view.LayoutTo(view.Bounds.FromOffSet(+strength * .33f), delay, Easing.Linear);
-            await view.LayoutTo(view.Bounds.FromOffSet(0), delay, Easing.Linear);
-
+            var parentAnimation = new Animation
+            {
+                { 0,  .2, new Animation(x => view.TranslationX = x, 0, -strength, Easing.Linear, null)},
+                { .2, .4, new Animation(x => view.TranslationX = x, -strength, strength, Easing.Linear, null)},
+                { .4, .6, new Animation(x => view.TranslationX = x, strength, -strength * .66F, Easing.Linear, null)},
+                { .6, .8, new Animation(x => view.TranslationX = x, -strength * .66F, strength * 33F, Easing.Linear, null)},
+                { .8,  1, new Animation(x => view.TranslationX = x, strength * 33F, 0, Easing.Linear, null)},
+            };
+            parentAnimation.Commit(view, "ShakeHorizontally", 16, duration, Easing.Linear, null, null);
         }
 
         public static void ShakeVertically(this View view, float strength = 12.0f, uint duration = 500)
