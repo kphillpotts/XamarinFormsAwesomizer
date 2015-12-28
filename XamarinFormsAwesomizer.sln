@@ -5,11 +5,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinFormsAwesomizer", "X
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample", "Sample", "{4FC323BC-479A-4FD4-A720-1B636626538D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XFAwesomizerSample", "..\XamarinFormsAwesomizerSample\XFAwesomizerSample\XFAwesomizerSample.csproj", "{D1190E05-514F-4FBF-943E-6E0FDD527F6E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XFAwesomizerSample", "Sample\XFAwesomizerSample\XFAwesomizerSample.csproj", "{D1190E05-514F-4FBF-943E-6E0FDD527F6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XFAwesomizerSample.iOS", "..\XamarinFormsAwesomizerSample\iOS\XFAwesomizerSample.iOS.csproj", "{A94203A0-E720-4D75-AAFD-F3E4565CA3CB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XFAwesomizerSample.Droid", "Sample\Droid\XFAwesomizerSample.Droid.csproj", "{04BD58E4-F403-4562-A9E8-374788524B26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XFAwesomizerSample.Droid", "..\XamarinFormsAwesomizerSample\Droid\XFAwesomizerSample.Droid.csproj", "{04BD58E4-F403-4562-A9E8-374788524B26}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XFAwesomizerSample.iOS", "Sample\iOS\XFAwesomizerSample.iOS.csproj", "{A94203A0-E720-4D75-AAFD-F3E4565CA3CB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -72,7 +72,7 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{D1190E05-514F-4FBF-943E-6E0FDD527F6E} = {4FC323BC-479A-4FD4-A720-1B636626538D}
-		{A94203A0-E720-4D75-AAFD-F3E4565CA3CB} = {4FC323BC-479A-4FD4-A720-1B636626538D}
 		{04BD58E4-F403-4562-A9E8-374788524B26} = {4FC323BC-479A-4FD4-A720-1B636626538D}
+		{A94203A0-E720-4D75-AAFD-F3E4565CA3CB} = {4FC323BC-479A-4FD4-A720-1B636626538D}
 	EndGlobalSection
 EndGlobal
