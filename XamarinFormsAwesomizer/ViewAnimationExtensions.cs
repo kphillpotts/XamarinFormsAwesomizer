@@ -6,7 +6,7 @@ namespace XamarinFormsAwesomizer
 {
     public static class ViewAnimationExtensions
     {
-
+        
         private static Rectangle FromOffSet (this Rectangle rectangle, double xOffset = 0, double yOffSet = 0)
         {
             Rectangle rect = new Rectangle(rectangle.Location.Offset(xOffset, yOffSet), rectangle.Size);
@@ -20,8 +20,8 @@ namespace XamarinFormsAwesomizer
                 { 0,  .2, new Animation(x => view.TranslationX = x, 0, -strength, Easing.Linear, null)},
                 { .2, .4, new Animation(x => view.TranslationX = x, -strength, strength, Easing.Linear, null)},
                 { .4, .6, new Animation(x => view.TranslationX = x, strength, -strength * .66F, Easing.Linear, null)},
-                { .6, .8, new Animation(x => view.TranslationX = x, -strength * .66F, strength * 33F, Easing.Linear, null)},
-                { .8,  1, new Animation(x => view.TranslationX = x, strength * 33F, 0, Easing.Linear, null)},
+                { .6, .8, new Animation(x => view.TranslationX = x, -strength * .66F, strength * .33F, Easing.Linear, null)},
+                { .8,  1, new Animation(x => view.TranslationX = x, strength * .33F, 0, Easing.Linear, null)},
             };
             parentAnimation.Commit(view, "ShakeHorizontally", 16, duration, Easing.Linear, null, null);
         }
